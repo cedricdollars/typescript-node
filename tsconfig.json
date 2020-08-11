@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+        "sourceMap": true,
+        "outDir": "dist",
+        "target": "es5",
+        "esModuleInterop": true,
+        "strict": true,
+        "module": "commonjs",
+        "lib": ["Esnext"],
+        "types": ["node", "express"]
+    },
+    "include": [
+        "src/**/*"
+    ]
+}

@@ -1,0 +1,19 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource postgresql {
+  provider = "postgresql"
+  url = "***"
+}
+
+model rules {
+  id    Int      @default(autoincrement()) @id
+  admin Boolean?
+}
+
+model users {
+  id    Int     @default(autoincrement()) @id
+  name  String?
+  email String?
+}
