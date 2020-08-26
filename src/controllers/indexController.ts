@@ -1,5 +1,5 @@
 import { Response, Request } from 'express';
-import ApiError from '../error/api_error';
+import ApiError from '../base/ErrorException';
 import { PrismaClient } from '@prisma/client';
 
 class IndexController {

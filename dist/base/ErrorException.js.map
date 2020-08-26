@@ -1,0 +1,1 @@
+{"version":3,"file":"ErrorException.js","sourceRoot":"","sources":["../../src/base/ErrorException.ts"],"names":[],"mappings":";;AAAC;IAIG,wBAAY,IAAY,EAAE,OAAwB;QAC9C,IAAI,CAAC,IAAI,GAAG,IAAI,CAAC;QACjB,IAAI,CAAC,OAAO,GAAG,OAAO,CAAA;IAC1B,CAAC;IAEL,qBAAC;AAAD,CAAC,AATA,IASA"}
