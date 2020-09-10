@@ -3,11 +3,11 @@ import * as dotenv from 'dotenv';
 import { ApolloServer } from 'apollo-server';
 
 
-
-const PORT= process.env.PORT || 4000
+dotenv.config();
+const PORT = process.env.PORT;
 
 app.listen(PORT, () => {
-    console.log(`🚀 Server ready and listening at ${PORT}`);
+    console.log(`🚀 Server started at http://localhost:${PORT}`);
 }) 
 
 

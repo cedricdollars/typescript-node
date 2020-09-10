@@ -22,11 +22,34 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var app_1 = __importDefault(require("./app"));
-var dotenv = __importStar(require("dotenv"));
-dotenv.config();
-var PORT = process.env.PORT;
-app_1.default.listen(PORT, function () {
-    console.log("\uD83D\uDE80 Server started at http://localhost:" + PORT);
-});
-//# sourceMappingURL=server.js.map
+exports.verifyToken = void 0;
+var jwt = __importStar(require("jsonwebtoken"));
+var config_1 = __importDefault(require("../config/config"));
+exports.verifyToken = function (req, res, next) {
+    var token = req.headers['x-access-token'];
+    var payload;
+    if (!token) {
+        return res.status(400).send({
+            auth: false,
+            message: 'Missing token'
+        });
+    }
+    try {
+        payload = jwt.verify(token, config_1.default.jwtSecret);
+        res.locals.payload = payload;
+    }
+    catch (error) {
+        res.status(401).send({
+            auth: false,
+            message: "No authorized"
+        });
+    }
+    var userId = payload.userId, username = payload.username;
+    var userToken = jwt.sign({
+        userId: userId,
+        username: username
+    }, config_1.default.jwtSecret, { expiresIn: "1h" });
+    res.setHeader('token', userToken);
+    next();
+};
+//# sourceMappingURL=verifyToken.js.map
