@@ -1,9 +1,9 @@
 {
-  "type": "postgres",
+  "type": "mysql",
   "host": "localhost",
-  "port": 5432,
-  "username": "pc_dollars",
-  "password": "",
+  "port": 8889,
+  "username": "root",
+  "password": "root",
   "database": "technical",
   "synchronize": true,
   "logging": false,
